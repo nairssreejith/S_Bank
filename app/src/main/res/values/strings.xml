@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">S Bank</string>
+    <string name="app_logo">S.</string>
+    <string name="intro_steps_def">First of the few steps to set you up with a Bank Account</string>
+    <string name="pan_number_title">PAN NUMBER</string>
+    <string name="birthdate_title">BIRTHDATE</string>
+    <string name="disclaimer">Providing PAN &amp; Date of Birth helps us find and fetch your KYC from a central registry by the Government of India.</string>
+    <string name="learn_more_link_text">Learn more</string>
+    <string name="non_pan_member_link_text">I don\'t have a PAN</string>
+</resources>
