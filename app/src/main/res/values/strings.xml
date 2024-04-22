@@ -4,7 +4,12 @@
     <string name="intro_steps_def">First of the few steps to set you up with a Bank Account</string>
     <string name="pan_number_title">PAN NUMBER</string>
     <string name="birthdate_title">BIRTHDATE</string>
-    <string name="disclaimer">Providing PAN &amp; Date of Birth helps us find and fetch your KYC from a central registry by the Government of India.</string>
+    <string name="disclaimer">Providing PAN &amp; Date of Birth helps us find and fetch your KYC from a central registry by the Government of India. Learn more.</string>
     <string name="learn_more_link_text">Learn more</string>
     <string name="non_pan_member_link_text">I don\'t have a PAN</string>
+    <string name="hint_year">YYYY</string>
+    <string name="hint_month">MM</string>
+    <string name="hint_day">DD</string>
+    <string name="btn_next_text">NEXT</string>
+    <string name="hin_pan_format">ABCDE1234F</string>
 </resources>
