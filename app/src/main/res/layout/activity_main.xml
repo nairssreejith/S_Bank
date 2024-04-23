@@ -1,239 +1,246 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:tools="http://schemas.android.com/tools"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        tools:context=".view.MainActivity"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="32dp"
+    tools:context=".view.MainActivity">
+
+    <TextView
+        android:id="@+id/tv_app_logo"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="32dp">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/lexend_deca_bold"
+        android:text="@string/app_logo"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_intro_steps_definition"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
 
-        <TextView
-            android:id="@+id/tv_app_logo"
+    <TextView
+        android:id="@+id/tv_intro_steps_definition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/lexend_deca_bold"
+        android:text="@string/intro_steps_def"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_app_logo" />
+
+    <TextView
+        android:id="@+id/tv_pan_number_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:fontFamily="@font/titillium_web_semibold"
+        android:text="@string/pan_number_title"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/edt_layout_pan_number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_intro_steps_definition"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/edt_layout_pan_number"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:boxCornerRadiusBottomEnd="8dp"
+        app:boxCornerRadiusBottomStart="8dp"
+        app:boxCornerRadiusTopEnd="8dp"
+        app:boxCornerRadiusTopStart="8dp"
+        app:hintEnabled="false"
+        app:layout_constraintBottom_toTopOf="@+id/tv_birthdate_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pan_number_title"
+        app:layout_constraintVertical_bias="0.5">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_pan_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="@string/app_logo"
-            android:textColor="@android:color/holo_red_light"
-            android:textSize="40sp"
-            android:fontFamily="@font/lexend_deca_bold"
-            app:layout_constraintBottom_toTopOf="@+id/tv_intro_steps_definition"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.5"/>
+            android:ems="10"
+            android:fontFamily="@font/cantarell_regular"
+            android:hint="@string/hin_pan_format"
+            android:inputType="textCapCharacters"
+            android:maxLength="10" />
 
-        <TextView
-            android:id="@+id/tv_intro_steps_definition"
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tv_birthdate_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="4dp"
+        android:fontFamily="@font/titillium_web_semibold"
+        android:text="@string/birthdate_title"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/edt_layout_date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_layout_pan_number"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/edt_layout_date"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        app:boxCornerRadiusBottomEnd="8dp"
+        app:boxCornerRadiusBottomStart="8dp"
+        app:boxCornerRadiusTopEnd="8dp"
+        app:boxCornerRadiusTopStart="8dp"
+        app:hintEnabled="false"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintBottom_toTopOf="@+id/tv_disclaimer"
+        app:layout_constraintEnd_toStartOf="@+id/edt_layout_month"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_birthdate_title">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="@string/intro_steps_def"
-            android:textSize="22sp"
-            android:fontFamily="@font/lexend_deca_bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_app_logo" />
+            android:ems="2"
+            android:fontFamily="@font/cantarell_regular"
+            android:gravity="center"
+            android:hint="@string/hint_day"
+            android:inputType="number"
+            android:maxLength="2" />
 
-        <TextView
-            android:id="@+id/tv_pan_number_title"
-            android:layout_width="0dp"
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/edt_layout_month"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:hint="@string/hint_month"
+        app:boxCornerRadiusBottomEnd="8dp"
+        app:boxCornerRadiusBottomStart="8dp"
+        app:boxCornerRadiusTopEnd="8dp"
+        app:boxCornerRadiusTopStart="8dp"
+        app:hintEnabled="false"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintBottom_toBottomOf="@+id/edt_layout_date"
+        app:layout_constraintEnd_toStartOf="@+id/edt_layout_year"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/edt_layout_date"
+        app:layout_constraintTop_toBottomOf="@+id/tv_birthdate_title">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_month"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/pan_number_title"
-            android:textSize="12sp"
-            android:fontFamily="@font/titillium_web_semibold"
-            android:layout_marginBottom="4dp"
-            app:layout_constraintBottom_toTopOf="@+id/edt_layout_pan_number"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_intro_steps_definition"
-            app:layout_constraintVertical_bias="0.5"
-            app:layout_constraintVertical_chainStyle="packed" />
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/edt_layout_pan_number"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:boxCornerRadiusBottomEnd="8dp"
-            app:boxCornerRadiusBottomStart="8dp"
-            app:boxCornerRadiusTopEnd="8dp"
-            app:boxCornerRadiusTopStart="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/tv_birthdate_title"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_pan_number_title"
-            app:layout_constraintVertical_bias="0.5"
-            app:hintEnabled="false">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_pan_number"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:maxLength="10"
-                android:hint="@string/hin_pan_format"
-                android:inputType="textCapCharacters"
-                android:fontFamily="@font/cantarell_regular"/>
-
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <TextView
-            android:id="@+id/tv_birthdate_title"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="@string/birthdate_title"
-            android:textSize="12sp"
-            android:layout_marginTop="40dp"
-            android:fontFamily="@font/titillium_web_semibold"
-            android:layout_marginBottom="4dp"
-            app:layout_constraintBottom_toTopOf="@+id/edt_layout_date"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edt_layout_pan_number"
-            app:layout_constraintVertical_bias="0.5" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_date_section"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.55"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/edt_layout_date"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="12dp"
-            app:layout_constraintBottom_toTopOf="@+id/tv_disclaimer"
-            app:layout_constraintEnd_toStartOf="@id/edt_layout_month"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_birthdate_title"
-            app:boxCornerRadiusBottomEnd="8dp"
-            app:boxCornerRadiusBottomStart="8dp"
-            app:boxCornerRadiusTopEnd="8dp"
-            app:boxCornerRadiusTopStart="8dp"
-            app:hintEnabled="false">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_date"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="2"
-                android:maxLength="2"
-                android:hint="@string/hint_day"
-                android:inputType="number"
-                android:fontFamily="@font/cantarell_regular"
-                android:gravity="center"/>
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/edt_layout_month"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:ems="2"
+            android:fontFamily="@font/cantarell_regular"
+            android:gravity="center"
             android:hint="@string/hint_month"
-            android:layout_marginStart="12dp"
-            android:layout_marginEnd="12dp"
-            app:layout_constraintBottom_toBottomOf="@+id/edt_layout_date"
-            app:layout_constraintEnd_toStartOf="@id/guideline_date_section"
-            app:layout_constraintStart_toEndOf="@id/edt_layout_date"
-            app:layout_constraintTop_toBottomOf="@+id/tv_birthdate_title"
-            app:boxCornerRadiusBottomEnd="8dp"
-            app:boxCornerRadiusBottomStart="8dp"
-            app:boxCornerRadiusTopEnd="8dp"
-            app:boxCornerRadiusTopStart="8dp"
-            app:hintEnabled="false">
+            android:inputType="number"
+            android:maxLength="2" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_month"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="2"
-                android:maxLength="2"
-                android:hint="@string/hint_month"
-                android:inputType="number"
-                android:fontFamily="@font/cantarell_regular"
-                android:gravity="center"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
-        </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/edt_layout_year"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:hint="@string/hint_year"
+        app:boxCornerRadiusBottomEnd="8dp"
+        app:boxCornerRadiusBottomStart="8dp"
+        app:boxCornerRadiusTopEnd="8dp"
+        app:boxCornerRadiusTopStart="8dp"
+        app:hintEnabled="false"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintBottom_toBottomOf="@+id/edt_layout_date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/edt_layout_month"
+        app:layout_constraintTop_toBottomOf="@+id/tv_birthdate_title">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/edt_layout_year"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:hint="@string/hint_year"
-            android:layout_marginStart="12dp"
-            app:layout_constraintBottom_toBottomOf="@+id/edt_layout_date"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/guideline_date_section"
-            app:layout_constraintTop_toBottomOf="@+id/tv_birthdate_title"
-            app:boxCornerRadiusBottomEnd="8dp"
-            app:boxCornerRadiusBottomStart="8dp"
-            app:boxCornerRadiusTopEnd="8dp"
-            app:boxCornerRadiusTopStart="8dp"
-            app:hintEnabled="false">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_year"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="4"
-                android:maxLength="4"
-                android:hint="@string/hint_year"
-                android:inputType="number"
-                android:fontFamily="@font/cantarell_regular"
-                android:gravity="center" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-
-        <TextView
-            android:id="@+id/tv_no_pan_link"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/non_pan_member_link_text"
-            android:textSize="18sp"
-            android:textColor="@color/design_default_color_primary"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_next"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_year"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:text="@string/btn_next_text"
-            android:textSize="18sp"
-            android:layout_marginBottom="8dp"
-            style="@style/Widget.MaterialComponents.Button"
-            app:layout_constraintBottom_toTopOf="@+id/tv_no_pan_link"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/tv_disclaimer"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/disclaimer"
-            android:textSize="16sp"
-            android:textColor="@color/gray"
-            android:layout_marginBottom="16dp"
-            app:layout_constraintBottom_toTopOf="@+id/btn_next"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:ems="4"
+            android:fontFamily="@font/cantarell_regular"
+            android:gravity="center"
+            android:hint="@string/hint_year"
+            android:inputType="number"
+            android:maxLength="4" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
 
+    <TextView
+        android:id="@+id/tv_date_error_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:gravity="start"
+        android:layout_marginStart="16dp"
+        android:text="Error Message"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="12sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_layout_date" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_no_pan_link"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/non_pan_member_link_text"
+        android:textColor="@color/design_default_color_primary"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_next"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/btn_next_text"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_no_pan_link"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_disclaimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="@string/disclaimer"
+        android:textColor="@color/gray"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

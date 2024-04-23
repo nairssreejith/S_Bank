@@ -13,6 +13,9 @@
     <string name="btn_next_text">NEXT</string>
     <string name="hin_pan_format">ABCDE1234F</string>
     <string name="no_pan_exit_conformation">"Without PAN number, we can't proceed with the registration process. Are you sure you want to quit the app?"</string>
+    <string name="registration_success">"Your registration was successful. Do you want to continue using the app?"</string>
     <string name="alert_dialog_positive">Yes</string>
     <string name="alert_dialog_negative">No</string>
+    <string name="_error_invalid_month">Month cannot be less than 1 or greater than 12</string>
+    <string name="error_invalid_day">Date cannot be less than 1 or greater than 31</string>
 </resources>
