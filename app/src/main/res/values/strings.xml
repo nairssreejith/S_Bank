@@ -12,4 +12,7 @@
     <string name="hint_day">DD</string>
     <string name="btn_next_text">NEXT</string>
     <string name="hin_pan_format">ABCDE1234F</string>
+    <string name="no_pan_exit_conformation">"Without PAN number, we can't proceed with the registration process. Are you sure you want to quit the app?"</string>
+    <string name="alert_dialog_positive">Yes</string>
+    <string name="alert_dialog_negative">No</string>
 </resources>
